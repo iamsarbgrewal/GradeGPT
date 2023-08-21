@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 840px;
+}
+
+.logo {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.chatbox-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.chatbox {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.message {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.received {
+  background-color: #ececec;
+  color: #181818;
+  text-align: left;
+}
+
+.user-input {
+  /* margin-top: 20px; */
+  display: flex;
+  align-items: center;
+}
+
+.user-input input {
+  flex: 1;
+}
+
+.user-input button {
+  margin-left: 10px;
+}
+
+/* Styles for the futuristic button design */
+.btn-futuristic {
+  background-color: transparent;
+  border: 2px solid #3ca2f4;
+  color: #3ca2f4;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-futuristic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3ca2f4;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.btn-futuristic:hover {
+  color: #fff;
+}
+
+.btn-futuristic:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-futuristic:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.3);
+}
+
+.name {
+  font-weight: 900;
+  color: #3ca2f4;
+}

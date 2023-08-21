@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<div class="min-vh-100">
+  <div class="align-self-center file-upload-contain">
+    <ul></ul>
+    {{"SELECT question_id, question_text, answer_text, answers.student_id FROM answers JOIN questions ON questions.id = answers.question_id" + "WHERE question_id={id}" if id == True else ""}}
+    {% for item in data %}
+    <div class="card">
+      <div
+        class="card-header"
+        data-bs-toggle="collapse"
+        data-bs-target="#question{{item[0]}}"
+        aria-expanded="false"
+        aria-controls="question"
+      >
+      
+        <b>Q: </b>{{item[1]}}
+      </div>
+      <div class="card-body collapse" id="question{{item[0]}}">
+        <h5 class="card-title">{{item[3]}} says:</h5>
+        <p class="card-text"><b>A: </b> {{item[2]}}</p>
+        <div class="actions d-flex">
+          <button class="btn btn-futuristic" id="grade{{item[0]}}" data-qid="{{item[0]}}">
+            Grade
+          </button>
+          <button class="btn btn-futuristic disabled">
+            <span>Grading...</span>
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only"></span>
+            </div>
+          </button>
+        </div>
+        <div class="gradebox mt-3" data-gradeId="{{item[0]}}"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
