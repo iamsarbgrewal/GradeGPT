@@ -8,7 +8,7 @@
 3. Run Flask app
     ```flask --app app run```
 4. To grade the questions, go to http://127.0.0.1:{your_port}/upload
-5. Select 'questions.docs' and then 'answers.docs' file, and click upload
+5. Select 'questions.docs' and then 'answers.docs' file (can be found in the `dataset` folder), and click upload
 6. This will save the question and answers to the db
 7. You can expand each question and click on 'Grade' to start grading the answers, this will cause the GPT-2 to generate it's answer and will return the scores
 
